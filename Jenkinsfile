@@ -11,7 +11,7 @@ pipeline {
 
         stage('Terraform Init') {
             steps {
-                dir('terraform') {
+                dir('tf-test') {
                     sh 'terraform init'
                 }
             }
@@ -19,7 +19,7 @@ pipeline {
 
         stage('Terraform Apply') {
             steps {
-                dir('terraform') {
+                dir('tf-test') {
                     sh 'terraform apply -auto-approve'
                 }
             }
